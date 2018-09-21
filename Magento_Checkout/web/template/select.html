@@ -1,0 +1,29 @@
+<div class="custom-select">
+    <div class="custom-select__placeholder">Please, select one</div>
+    <ul class="custom-select__ul">
+
+        <!-- ko foreach: { data: options, as: 'option' } -->
+         <li class="custom-select__li"
+             data-bind="
+             text: option.label,
+             click: $parent.clicked.bind($parent)
+         "></li>
+        <!-- /ko -->
+
+    </ul>
+</div>
+
+<select class="admin__control-select admin__control-select_hidden" data-bind="
+    attr: {
+        name: inputName,
+        id: uid,
+        disabled: disabled,
+        'aria-describedby': noticeId
+    },
+    hasFocus: focused,
+    optgroup: options,
+    value: value,
+    optionsCaption: caption,
+    optionsValue: 'value',
+    optionsText: 'label'"
+/>

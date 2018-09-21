@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="catalog.topnav">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="gallery.link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Gallery</argument>
+                    <argument name="path" xsi:type="string">gallery</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" before="logo" />
+            <referenceBlock name="top.links">
+                <referenceBlock remove="true" name="catalog.compare.link" />
+            </referenceBlock>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.js.block" as="custom.js.block" template="Magento_Theme::custom-js-template.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="page.bottom">
+            <block class="Magento\Cms\Block\Block" name="need_help_block" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">need_help_block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <block class="Magento\Theme\Block\Html\Header\Logo" name="logo-footer" after="footer_links">
+                <arguments>
+                    <argument name="logo_img_width" xsi:type="number">100</argument>
+                    <argument name="logo_img_height" xsi:type="number">100</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="navigation.sections.footer" after="-" template="Magento_Theme::html/sections.phtml">
+                <arguments>
+                    <argument name="group_name" xsi:type="string">navigation-sections</argument>
+                    <argument name="group_css" xsi:type="string">nav-sections</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Template" name="store.menu.footer" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <arguments>
+                        <argument name="title.footer" translate="true" xsi:type="string">Menu</argument>
+                    </arguments>
+                    <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav.footer" template="Magento_Theme::html/topmenu.phtml" ttl="3600" before="-"/>
+                </block>
+            </block>
+        </referenceContainer>
+
+    </body>
+</page>

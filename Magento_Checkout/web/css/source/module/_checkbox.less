@@ -1,0 +1,18 @@
+& when (@media-common = true) {
+  .checkbox-form-fields{
+    padding: 25px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    input:not([disabled]):focus{
+      box-shadow: none;
+    }
+  }
+
+  .checkbox-form-fields.active{
+    background: @color-purple2;
+    color: @color-white;
+  }
+}

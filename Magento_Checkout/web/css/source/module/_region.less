@@ -1,0 +1,32 @@
+& when (@media-common = true) {
+  .admin__control-select_hidden{
+    //display: none;
+  }
+
+  .custom-select{
+    margin-bottom: 20px;
+  }
+
+  .custom-select__placeholder{
+    padding-bottom: 20px;
+  }
+
+  .custom-select__ul{
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .custom-select__li{
+    padding: 10px 5px;
+    margin: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .custom-select__li.active{
+    color: @color-white;
+    background: @color-purple2;
+  }
+}
